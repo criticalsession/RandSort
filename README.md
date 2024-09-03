@@ -25,7 +25,7 @@ a single Task. Or do, I don't care, I'm not your dad.
 
 ## But... Why?
 
-![but Why gif](https://giphy.com/embed/s239QJIh56sRW)
+![but Why gif](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDYxMWFoZzdncDFybmE1ZHRmMWx0eWh5OWNwZG94d3RkcG1pdnk5diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/s239QJIh56sRW/giphy.webp)
 
 You are asking the wrong question. "Why not?" is also the wrong question. The correct question is "What 
 could possibly have possessed you to waste 2 hours working on this nonsense?" And the answer is complicated. 
