@@ -32,3 +32,5 @@ could possibly have possessed you to waste 2 hours working on this nonsense?" An
 See, I've been doing leetcode problems for a month in an attempt to `git gud` and my brain is fried. Experience 
 has taught me that the best way to unfry your brain is to do something stupid just for fun. It doesn't get 
 **any stupider than this.**
+
+Guess the answer wasn't as complicated as I originally let on.
