@@ -8,9 +8,9 @@ namespace RandSort {
 
             Random r = new Random();
 
-            int[] data = new int[100];
-            for (int i = 0; i < 100; i++) {
-                data[i] = r.Next(1, 2000);
+            int[] data = new int[10];
+            for (int i = 0; i < 10; i++) {
+                data[i] = r.Next(1, 10000);
             }
 
             var cts = new CancellationTokenSource();

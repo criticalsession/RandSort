@@ -1,4 +1,6 @@
-﻿namespace RandSort;
+﻿using System.Linq.Expressions;
+
+namespace RandSort;
 
 public class IntSorter {
     private int[] data;
@@ -59,12 +61,18 @@ public class IntSorter {
     }
 
     public void Randomize(Random r) {
+        HashSet<int> swapped = new ();
+
         for (int i = 0; i < data.Length; i++) {
             if (lockedPositions[i]) continue;
+            if (swapped.Contains(i)) continue;
 
-            int newPlace = r.Next(0, data.Length);
-            while (lockedPositions[newPlace]) {
-                newPlace = r.Next(0, data.Length);
+
+            int newPlace = r.Next(0, data.Length - 1);
+            int tries = 1000;
+            while (newPlace == i || lockedPositions[newPlace] || swapped.Contains(newPlace) || tries <= 0) {
+                newPlace = r.Next(0, data.Length - 1);
+                tries--;
             }
 
             int temp = data[newPlace];
