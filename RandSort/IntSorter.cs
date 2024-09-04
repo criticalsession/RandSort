@@ -4,11 +4,14 @@ namespace RandSort;
 
 public class IntSorter {
     private int[] data;
-    private bool[] lockedPositions;
+    private Dictionary<int, bool> lockedPositions;
 
     public IntSorter(int[] data) {
         this.data = data;
-        lockedPositions = new bool[data.Length];
+        lockedPositions = new();
+        for (int i = 0; i < data.Length; i++) {
+            lockedPositions[i] = false;
+        }
     }
 
     public int[] Sort(CancellationToken token) {
@@ -49,6 +52,8 @@ public class IntSorter {
             int num = data[i];
             bool setCorrect = true;
             for (int j = 0; j < data.Length; j++) {
+                if (lockedPositions[j]) continue;
+
                 int check = data[j];
                 if ((j < i && check > num) || (j > i && check < num)) {
                     setCorrect = false;
@@ -56,28 +61,48 @@ public class IntSorter {
                 }
             }
 
-            lockedPositions[i] = setCorrect;
+            if (setCorrect) {
+                lockedPositions[i] = true;
+            }
         }
     }
 
     public void Randomize(Random r) {
-        HashSet<int> swapped = new ();
+        List<int> swapped = new ();
+        var allRemaining = lockedPositions.Where(p => !p.Value).Select(p => p.Key);
+
+        // some shortcuts because I'm not a monster
+        if (allRemaining.Count() == 0) {
+            return;
+        } else if (allRemaining.Count() == 2) {
+            int posA = allRemaining.First(), posB = allRemaining.Last();
+
+            int temp = data[posA];
+            data[posA] = data[posB];
+            data[posB] = temp;
+
+            return;
+        }
 
         for (int i = 0; i < data.Length; i++) {
             if (lockedPositions[i]) continue;
             if (swapped.Contains(i)) continue;
 
+            var remaining = allRemaining.Where(p => !swapped.Contains(p) && p != i);
+            if (remaining.Count() == 0) break;
 
-            int newPlace = r.Next(0, data.Length - 1);
-            int tries = 1000;
-            while (newPlace == i || lockedPositions[newPlace] || swapped.Contains(newPlace) || tries <= 0) {
-                newPlace = r.Next(0, data.Length - 1);
-                tries--;
-            }
+            int newPlace = remaining.ElementAt(r.Next(0, remaining.Count()));
 
+            // swap
             int temp = data[newPlace];
             data[newPlace] = data[i];
             data[i] = temp;
+
+            // skip these two positions for the rest of the loop
+            swapped.Add(i);
+            swapped.Add(newPlace);
         }
+
+        Console.WriteLine($"Locked positions: {lockedPositions.Where(p => p.Value).Count()}");
     }
 }
