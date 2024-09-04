@@ -82,6 +82,6 @@ effect on time to sort is minimal.
 
 ## To-Do
 
-- [] Unit Tests
-- [] Make Generic
-- [] Publish DLLs
+- [ ] Unit Tests
+- [ ] Make Generic
+- [ ] Publish DLLs
