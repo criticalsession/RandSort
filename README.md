@@ -1,8 +1,12 @@
 # RandSort
 
-## Blazingly slow sorting algorithm based on randomly attempting swapping numbers around in an array and hoping we stumble upon the solution
+## Blazingly slow sorting algorithm based on randomly swapping numbers around in an array in hope that we stumble upon the solution
 
 **WARNING: Turn back. There's nothing of import for you here.**
+
+Time Complexity: O(A LOT)
+
+---
 
 Tired of **efficient** sorting algorithms? Want your software to **grind down to a halt** given a 
 slightly large array of integers? Looking to surrender your code to the **gods of chaos**? Wanna 
