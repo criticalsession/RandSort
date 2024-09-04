@@ -1,7 +1,9 @@
 # RandSort
 
-**This is a work in progress. Do not use it. It doesn't even sort `odd` length arrays. Eventually 
+**WARNING: This is a work in progress. Do not use it. It doesn't even sort `odd` length arrays. Eventually 
 it will be done, and even then you shouldn't use it.**
+
+---
 
 Tired of **efficient** sorting algorithms? Want your software to **grind down to a halt** given a 
 slightly large array of integers? Looking to surrender your code to the **gods of chaos**? Wanna 
