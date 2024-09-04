@@ -79,3 +79,9 @@ merge at the end has on the overall output. A chunk size of 5 takes 1.5ms to sor
 Another side-effect of the chunking system is that when the array grows larger than the size of the chunks, the 
 time it takes to sort the array plateaus. This is because chunks are sorted asynchronously using Tasks so the 
 effect on time to sort is minimal.
+
+## To-Do
+
+- [] Unit Tests
+- [] Make Generic
+- [] Publish DLLs
