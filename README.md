@@ -14,7 +14,7 @@ see all 16 processor cores spike to **100% for minutes at a time**? Well look no
 **RandSort** is here!
 
 Listen, we all love our efficient binary and cute bubble sorts. But do you know what they don't 
-have? Horrifically unoptimized code with a heavy dose of randomization. That's where RandSort comes 
+have? Horrifically unoptimized code with a heavy dose of randomization. That's where **RandSort** comes 
 in. 
 
 ## How it Works
@@ -50,23 +50,22 @@ The answer is simple: any array larger than 300-400 would just take more than a 
 the sort would never actually finish. The number of open positions for randomization was too large to ever 
 stumble onto a solution.
 
-Chunking helps solve this problem by keeping RandSort **blazingly slow**, but able to finish a sort in a human's 
+Chunking helps solve this problem by keeping **RandSort** **blazingly slow**, but able to finish a sort in a human's 
 very short lifetime.
 
 The size of chunks can be adjusted. If you use small chunks you're actually committing a crime (the merge algorithm 
 is (slightly more) efficient (than the all-random search)) and if you use chunks too large then you'll never 
 see the array sorted. A good middle-ground seems to be around 300 items per chunk to get that authentic 
-RandSort experience.
+**RandSort** experience.
 
 ## Let's Talk Results!
 
-It's shit. Where you expecting otherwise?
+It's shit. Were you expecting otherwise?
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/criticalsession/RandSort/master/Results/cpu_oopsie.png" />
+  <img src="https://raw.githubusercontent.com/criticalsession/RandSort/master/Results/cpu_oopsie.png" /><br />
+  <i>This is your CPU on **RandSort**</i>
 </p>
-
-This is your CPU on RandSort.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/criticalsession/RandSort/master/Results/randsort_results.png" />
