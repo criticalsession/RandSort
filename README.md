@@ -64,7 +64,7 @@ It's shit. Were you expecting otherwise?
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/criticalsession/RandSort/master/Results/cpu_oopsie.png" /><br />
-  <i>This is your CPU on **RandSort**</i>
+  <i>This is your CPU on RandSort</i>
 </p>
 
 <p align="center">
