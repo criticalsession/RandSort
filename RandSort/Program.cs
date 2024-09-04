@@ -8,12 +8,12 @@ namespace RandSort {
 
             Random r = new Random();
 
-            int[] data = new int[200];
-            for (int i = 0; i < 200; i++) {
-                data[i] = r.Next(1, 10000);
+            int[] data = new int[300];
+            for (int i = 0; i < 300; i++) {
+                data[i] = r.Next(1, 1000);
             }
 
-            int[] res = await RandSorter.Sort(data, 1);
+            int[] res = await RandSorter.Sort(data, 300);
 
             sw.Stop();
             Console.WriteLine($"Done in {sw.ElapsedMilliseconds}ms");

@@ -14,7 +14,7 @@ public class IntSorter {
         }
     }
 
-    public int[] Sort(CancellationToken token) {
+    public int[] Sort() {
         if (data.Length < 2) return data;
         if (data.Length == 2) {
             if (data[0] > data[1]) {
@@ -28,7 +28,6 @@ public class IntSorter {
 
         while (true) {
             if (IsSorted()) break;
-            if (token.IsCancellationRequested) break;
 
             LockPositions();
             Randomize(rand);
@@ -102,7 +101,5 @@ public class IntSorter {
             swapped.Add(i);
             swapped.Add(newPlace);
         }
-
-        Console.WriteLine($"Locked positions: {lockedPositions.Where(p => p.Value).Count()}");
     }
 }

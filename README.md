@@ -1,7 +1,6 @@
 # RandSort
 
-**WARNING: This is a work in progress. Do not use it. It doesn't even sort `odd` length arrays. Eventually 
-it will be done, and even then you shouldn't use it.**
+**WARNING: This is a work in progress. Do not use it. Eventually it will be done, and even then you shouldn't use it.**
 
 ---
 
@@ -18,15 +17,15 @@ in.
 
 Shocking, I know, but this actually does sort arrays. Here's how (brace yourself): 
 
-1. Check all items in the array to see if they're sorted. If they are, return the sorted array.
-2. Loop through each item and check whether all items on the left of it are smaller and all 
+1. Split the source array into chunks and start a Task to sort each chunk separately.
+2. Check all items in the array to see if they're sorted. If they are, return the sorted array.
+3. Loop through each item and check whether all items on the left of it are smaller and all 
 items on the right are bigger. If they are, lock the position as the number is sorted.
-3. Loop through all items in the array and swap each one with another from a random position. Only 
+4. Loop through all items in the array and swap each one with another from a random position. Only 
 unlocked positions are available for swapping.
-4. Go back to 1.
+5. Go back to 1.
 
-This obviously only works if multiple Tasks are launched to handle the array. *Do not* run this with 
-a single Task. Or do, I don't care, I'm not your dad.
+When all chunks are sorted, they are then merged back together and returned.
 
 ## But... Why?
 
@@ -39,3 +38,18 @@ has taught me that the best way to unfry your brain is to do something stupid ju
 **any stupider than this.**
 
 Guess the answer wasn't as complicated as I originally let on.
+
+## Isn't Chunking TOO efficient?
+
+I concede that chunking was done to improve performance and you may be asking "Why on Earth would you do that?" 
+The answer is simple: any array larger than 300-400 would just take more than a minute sometimes to finish. With
+a 1000 items, the sort would never actually finish. The number of open positions for randomization was too large 
+to ever stumble onto a solution.
+
+Chunking helps solve this problem by keeping RandSort blazingly slow, but able to finish a sort in a human's 
+very short lifetime.
+
+The size of chunks can be adjusted. If you use small chunks you're actually cheating (the merge algorithm 
+is (slightly more) efficient (than the all-random search)) and if you use chunks too large then you'll never 
+see the array sorted. A good middle-ground seems to be around 300 items per chunk to get that authentic 
+RandSort experience.
