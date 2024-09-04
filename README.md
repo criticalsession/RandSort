@@ -1,12 +1,8 @@
 # RandSort
 
-## Blazingly Slow
-
----
+## Blazingly slow sorting algorithm based on randomly attempting swapping numbers around in an array and hoping we stumble upon the solution
 
 **WARNING: Turn back. There's nothing of import for you here.**
-
----
 
 Tired of **efficient** sorting algorithms? Want your software to **grind down to a halt** given a 
 slightly large array of integers? Looking to surrender your code to the **gods of chaos**? Wanna 
@@ -30,8 +26,6 @@ unlocked positions are available for swapping.
 5. Go back to 2.
 
 When all chunks are sorted, they are then merged back together and returned.
-
-## But... Why?
 
 <p align="center">
   <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDYxMWFoZzdncDFybmE1ZHRmMWx0eWh5OWNwZG94d3RkcG1pdnk5diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/s239QJIh56sRW/giphy.webp" />
