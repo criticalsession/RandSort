@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using RandomSort;
 
 namespace RandSort {
     internal class Program {

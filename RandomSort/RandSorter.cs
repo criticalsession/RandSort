@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RandSort;
+﻿namespace RandomSort;
 public class RandSorter {
     /// <summary>
     /// Sorts data using random swapping. Horribly inefficient. Do not use.

@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace RandSort;
+﻿namespace RandomSort;
 
 public class IntSorter {
     private int[] data;
@@ -24,13 +22,17 @@ public class IntSorter {
             }
         }
 
+        if (IsSorted()) return data;
+
         Random rand = new Random();
-
         while (true) {
-            if (IsSorted()) break;
+            if (!lockedPositions.Any(p => !p.Value) && IsSorted()) {
+                // we check "IsSorted()" for safety
+                break;
+            }
 
-            LockPositions();
             Randomize(rand);
+            LockPositions();
         }
 
         return data;
@@ -67,7 +69,7 @@ public class IntSorter {
     }
 
     public void Randomize(Random r) {
-        List<int> swapped = new ();
+        List<int> swapped = new();
         var allRemaining = lockedPositions.Where(p => !p.Value).Select(p => p.Key);
 
         // some shortcuts because I'm not a monster
