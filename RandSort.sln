@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandSort", "RandSort\RandSort.csproj", "{63B3A44E-6BB8-43A5-9B55-A6726E7BDD5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandSortTester", "RandSort\RandSortTester.csproj", "{63B3A44E-6BB8-43A5-9B55-A6726E7BDD5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomSort", "RandomSort\RandomSort.csproj", "{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandSort", "RandomSort\RandSort.csproj", "{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

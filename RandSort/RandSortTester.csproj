@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RandomSort\RandomSort.csproj" />
+    <ProjectReference Include="..\RandomSort\RandSort.csproj" />
   </ItemGroup>
 
 </Project>

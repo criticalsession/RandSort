@@ -1,4 +1,4 @@
-﻿namespace RandomSort;
+﻿namespace RandSort;
 public class RandSorter {
     /// <summary>
     /// Sorts data using random swapping. Horribly inefficient. Do not use.

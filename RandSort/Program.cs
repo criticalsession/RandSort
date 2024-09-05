@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using RandomSort;
+using RandSort;
 
-namespace RandSort {
+namespace RandSortTester {
     internal class Program {
         static async Task Main(string[] args) {
             Random r = new Random();

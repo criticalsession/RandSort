@@ -1,4 +1,4 @@
-﻿namespace RandomSort;
+﻿namespace RandSort;
 
 public class IntSorter {
     private int[] data;
