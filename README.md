@@ -2,9 +2,9 @@
 
 ## Blazingly slow sorting algorithm based on randomly swapping numbers around in an array in hope that we stumble upon the solution
 
-**WARNING: Turn back. There's nothing of import for you here.**
+**WARNING: Turn back. There's nothing of value for you here.**
 
-Time Complexity: O(A LOT)
+Time Complexity: O(A_LOT)
 
 ---
 
@@ -80,8 +80,25 @@ Another side-effect of the chunking system is that when the array grows larger t
 time it takes to sort the array plateaus. This is because chunks are sorted asynchronously using Tasks so the 
 effect on time to sort is minimal.
 
+## No, Really... Why?
+
+Now that you've reached the end of this README, I can be a little more honest.
+
+Truthfully, I just wanted to see if it was possible to sort an array in a decent length of time. I have attempted to 
+optimize most of the surrounding logic such that the only variable left is the actual randomization of the numbers 
+in the array (although I didn't waste *too* much effort on this optimization either and there's surely place for 
+improvement).
+
+Funnily enough, most of the problems I had to solve here weren't problems I've solved a million times before, so that 
+was refreshing. Locking the positions of sorted numbers, for example, isn't something you would necessarily run into in 
+your day-to-day programming life. It was a problem that arose out of necessity (that necessity being not wanting to wait 
+until the heat death of the universe to sort 100 numbers.)
+
+So yeah, super fun experiment. Hope you at least enjoyed reading the README as much as I did writing it. And please 
+go check out some of my other projects; I swear I know what I'm doing (most of the time.)
+
 ## To-Do
 
 - [ ] Unit Tests
 - [ ] Make Generic
-- [ ] Publish DLLs
+- [x] Extract to Class Project

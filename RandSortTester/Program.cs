@@ -1,13 +1,14 @@
 ﻿using System.Diagnostics;
+using RandSort;
 
-namespace RandSort {
+namespace RandSortTester {
     internal class Program {
         static async Task Main(string[] args) {
             Random r = new Random();
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            int size = 1_000, chunkSize = 200;
+            int size = 100, chunkSize = 200;
 
             int[] data = new int[size];
             for (int i = 0; i < size; i++) {
