@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using System.Transactions;
 
 namespace RandSort;
 
@@ -28,8 +29,6 @@ public class IntSorter {
 
         while (true) {
             if (IsSorted()) break;
-
-            LockPositions();
             Randomize(rand);
         }
 
@@ -37,44 +36,49 @@ public class IntSorter {
     }
 
     public bool IsSorted() {
-        for (int i = 0; i < data.Length - 1; i++) {
-            if (data[i] > data[i + 1]) return false;
+        int n = data.Length;
+        int[] leftMax = new int[n];
+        int[] rightMin = new int[n];
+
+        leftMax[0] = data[0];
+        for (int i = 1; i < n - 1; i++) {
+            leftMax[i] = Math.Max(leftMax[i - 1], data[i]);
         }
 
-        return true;
-    }
+        rightMin[n - 1] = data[n - 1];
+        for (int i = data.Length - 2; i >= 0; i--) {
+            rightMin[i] = Math.Min(rightMin[i + 1], data[i]);
+        }
 
-    public void LockPositions() {
-        for (int i = 0; i < data.Length; i++) {
+        bool allCorrect = true;
+        for (int i = 0; i < n; i++) {
             if (lockedPositions[i]) continue;
 
-            int num = data[i];
-            bool setCorrect = true;
-            for (int j = 0; j < data.Length; j++) {
-                if (lockedPositions[j]) continue;
+            bool leftLock = (i == 0) || (data[i] >= leftMax[i - 1]);
+            bool rightLock = (i == n - 1) || (data[i] <= rightMin[i + 1]);
 
-                int check = data[j];
-                if ((j < i && check > num) || (j > i && check < num)) {
-                    setCorrect = false;
-                    break;
-                }
-            }
-
-            if (setCorrect) {
+            if (leftLock && rightLock) {
                 lockedPositions[i] = true;
             }
+            else
+            {
+                allCorrect = false;
+            }
         }
+
+        return allCorrect;
     }
 
     public void Randomize(Random r) {
         List<int> swapped = new ();
-        var allRemaining = lockedPositions.Where(p => !p.Value).Select(p => p.Key);
+        int[] allRemaining = lockedPositions.Where(p => !p.Value).Select(p => p.Key).ToArray();
 
         // some shortcuts because I'm not a monster
-        if (allRemaining.Count() == 0) {
+        if (allRemaining.Length == 0) {
             return;
-        } else if (allRemaining.Count() == 2) {
-            int posA = allRemaining.First(), posB = allRemaining.Last();
+        } else if (allRemaining.Length == 2) {
+            int posA = allRemaining.First(), 
+                posB = allRemaining.Last();
 
             int temp = data[posA];
             data[posA] = data[posB];
