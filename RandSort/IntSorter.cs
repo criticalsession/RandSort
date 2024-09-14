@@ -1,7 +1,4 @@
-﻿using System.Linq.Expressions;
-using System.Transactions;
-
-namespace RandSort;
+﻿namespace RandSort;
 
 public class IntSorter {
     private int[] data;

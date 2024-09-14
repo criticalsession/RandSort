@@ -8,7 +8,7 @@ namespace RandSortTester {
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            int size = 100, chunkSize = 200;
+            int size = 1000, chunkSize = 200;
 
             int[] data = new int[size];
             for (int i = 0; i < size; i++) {
