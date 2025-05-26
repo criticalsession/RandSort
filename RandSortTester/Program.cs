@@ -3,22 +3,37 @@ using RandSort;
 
 namespace RandSortTester {
     internal class Program {
-        static async Task Main(string[] args) {
-            Random r = new Random();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
+        private static async Task Main(string[] args) {
+            var r = new Random();
+            var sw = new Stopwatch();
 
-            int size = 1000, chunkSize = 200;
+            const int size = 5_000;
+            const int chunkSize = 300;
 
-            int[] data = new int[size];
-            for (int i = 0; i < size; i++) {
+            var data = new int[size];
+            for (var i = 0; i < size; i++) {
                 data[i] = r.Next(1, 1_000_000);
             }
 
+            Console.WriteLine($"Starting Sort - Size: {size}; Chunks: {chunkSize}.");
+
+            sw.Start();
+
+            var progressTask = Task.Run(async () =>
+            {
+                while (sw.IsRunning)
+                {
+                    Console.Write($"\rSorting... (this will take a while). {sw.Elapsed.TotalSeconds:F1}s");
+                }
+            });
+            
             await RandSorter.Sort(data, chunkSize);
 
             sw.Stop();
-            Console.WriteLine($"Size: {size}; Chunks: {chunkSize}; Time: {sw.ElapsedMilliseconds}ms");
+            
+            await progressTask;
+            
+            Console.WriteLine($"\nSort Complete!");
             sw.Reset();
         }
     }
