@@ -99,6 +99,6 @@ go check out some of my other projects; I swear I know what I'm doing (most of t
 
 ## To-Do
 
-- [ ] Unit Tests
+- [x] Unit Tests
 - [ ] Make Generic
 - [x] Extract to Class Project
