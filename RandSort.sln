@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandSortTester", "RandSortT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandSort", "RandSort\RandSort.csproj", "{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandSort.UnitTests", "RandSort.UnitTests\RandSort.UnitTests.csproj", "{35024FE5-546E-44CA-84BF-4E3E7FECC66F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE500E7-F67D-4A97-ACC0-D22DD3047BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35024FE5-546E-44CA-84BF-4E3E7FECC66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35024FE5-546E-44CA-84BF-4E3E7FECC66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35024FE5-546E-44CA-84BF-4E3E7FECC66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35024FE5-546E-44CA-84BF-4E3E7FECC66F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

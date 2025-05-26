@@ -5,6 +5,8 @@ public class IntSorter {
     private Dictionary<int, bool> _lockedPositions;
 
     public IntSorter(int[] data) {
+        if (data == null) throw new ArgumentNullException(nameof(data), "Data cannot be null.");
+
         _data = data;
         _lockedPositions = new Dictionary<int, bool>();
         for (var i = 0; i < data.Length; i++) {
